@@ -1,10 +1,14 @@
 package grupo.teste01.persistence;
 
+import grupo.teste01.entity.Bookmark;
+
 import java.util.List;
 
+import javax.inject.Scope;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import grupo.teste01.entity.Bookmark;
 import br.gov.frameworkdemoiselle.stereotype.PersistenceController;
 import br.gov.frameworkdemoiselle.template.JPACrud;
 
@@ -12,6 +16,15 @@ import br.gov.frameworkdemoiselle.template.JPACrud;
 public class BookmarkDAO extends JPACrud<Bookmark, Long> {
 
 	private static final long serialVersionUID = 1L;
+	
+	@PersistenceContext
+	EntityManager em;
+	
+	@Override
+	protected EntityManager getEntityManager() {
+		// TODO Auto-generated method stub
+		return super.getEntityManager();
+	}
 
 	public List<Bookmark> find(String filter) {
 		StringBuffer ql = new StringBuffer();

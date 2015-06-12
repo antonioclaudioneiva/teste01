@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @Entity
 public class Bookmark implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L; 
 
 	/*
 	 * If you are using Glassfish then remove the strategy attribute
@@ -29,7 +29,7 @@ public class Bookmark implements Serializable {
 
 	@NotNull
 	@Size(min = 1, message = "{required.field}")
-	@Pattern(regexp = "^|([a-zA-Z]+://)(\\w+\\.\\w+)(.+)?$", message = "{invalid.url}")
+//	@Pattern(regexp = "^|([a-zA-Z]+://)(\\w+\\.\\w+)(.+)?$", message = "{invalid.url}")
 	private String link;
 
 	public Bookmark() {
